@@ -90,7 +90,10 @@ trait Exportable
         if (Str::endsWith($path, 'csv')) {
             $options = new \OpenSpout\Writer\CSV\Options();
             $writer = new \OpenSpout\Writer\CSV\Writer($options);
-        } elseif (Str::endsWith($path, 'ods')) {
+        }if (Str::endsWith($path, 'tsv')) {
+            $options = new \OpenSpout\Writer\CSV\Options();
+            $writer = new \OpenSpout\Writer\CSV\Writer($options);
+        }elseif (Str::endsWith($path, 'ods')) {
             $options = new \OpenSpout\Writer\ODS\Options();
             $writer = new \OpenSpout\Writer\ODS\Writer($options);
         } else {
